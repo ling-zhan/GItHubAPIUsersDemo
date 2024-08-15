@@ -1,6 +1,6 @@
 # GitHub Open API Users Demo
 
-這是一個 Open API 獲取 Users 及 user 的演示 ✨
+這是一個 GitHub Open API 獲取 Users 及 user 的演示 ✨
 - 使用 Swift Storyboard 製作專案
 - 使用 MVVM 架構
 - 使用 TabView + Cell 製作畫面
