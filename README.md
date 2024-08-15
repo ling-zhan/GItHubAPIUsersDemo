@@ -10,26 +10,38 @@
 ## 檔案結構
 GitHubUser > Users
 > Models：存放抓取 http users 的資料結構檔案
+> 
 > ViewModels：存放提供給 ViewController 的 ViewModel檔案
+> 
 > ViewControllers：存放畫面檔案
+> 
 > Views：存放給 TableView 的 Cell 元件檔案
 
 GitHubUser > UserDetail
 > Models：存放抓取 http user detail 的資料結構檔案
+> 
 > ViewModels：存放提供給 ViewController 的 ViewModel檔案
+> 
 > ViewControllers：存放畫面檔案
+> 
 > Views：存放給 TableView 的 Cell 元件檔案
 
 GitHubUser > UserDetail > Views
 > UserAvatarTableViewCell： 呈現 使用者頭像的元件
+> 
 > IconLabelTableViewCell：呈現有 icon + Label 的元件
+> 
 > HyperlinkTableViewCell：呈現超連結的元件
+> 
 > DividerTableViewCell：呈現底線的元件
+> 
 > LongTextTableViewCell：呈現長內容的元件
+> 
 > EditView：呈現編輯名稱的元件
 
 Resource 
 > Enum：存放 HttpError 枚舉
+> 
 > Menager：Http 的請求檔案
 
 ## 說明
