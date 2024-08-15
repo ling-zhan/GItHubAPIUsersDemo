@@ -4,7 +4,9 @@
 - 使用 Swift Storyboard 製作專案
 - 使用 MVVM 架構
 - 使用 TabView + Cell 製作畫面
-- 使用 URLRequest 進行 API的串接
+- 使用 URLRequest 進行 API 的串接
+- 使用 closure 將 Http 請求的資料回傳至 ViewModel
+- 使用 delegate 與 View、ViewController、ViewModel 之間的事件傳遞
 - GitHub API 參考 (https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#list-users)
 
 ## 檔案結構
