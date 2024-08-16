@@ -124,15 +124,24 @@ extension UserDetailViewModel {
     
     /// 取得使用者詳細資料
     func getUserDetail() {
-        HttpManager.shared.getGitHubUserDetail(username: self.username, success: { user in
-            if let user = user {
-                self.user = user
-                self.delegate?.getUserDetailSuccess()
-            } else {
-                self.delegate?.getUserDetailFailure()
-            }
-        }, failure: { error in
-            self.delegate?.getUserDetailFailure()
-        })
+        HttpManager.shared.getGitHubUserDetail(
+            username: self.username,
+            success: { [weak self] user in
+                guard let self = self else { return }
+                
+                if let user = user {
+                    self.user = user
+                    self.delegate?.getUserDetailSuccess()
+                } else {
+                    self.delegate?.getUserDetailFailure()
+                }
+            }, failure: { [weak self] error in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    self.message = error.message
+                    delegate?.getUserDetailFailure()
+                }
+            })
     }
 }

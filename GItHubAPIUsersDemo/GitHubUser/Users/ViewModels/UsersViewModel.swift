@@ -65,16 +65,19 @@ extension UsersViewModel {
     func getGitHubUsers() {
         HttpManager.shared.getGitHubUsers(
             since: since,
-            success: { users in
+            success: { [weak self] users in
+                guard let self = self else { return }
+                
                 if let users = users {
-                    
                     self.users.append(contentsOf: users)
                     self.since = self.users.count
                     self.delegate?.getUsersSuccess()
                 }
-            }, failure: { [self] error in
+            }, failure: { [weak self] error in
+                guard let self = self else { return }
+                
                 if let error = error {
-                    self.message = error.localizedDescription
+                    self.message = error.message
                     delegate?.getUsersFailure()
                 }
             })

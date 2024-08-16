@@ -58,6 +58,17 @@ extension UserDetailViewController {
         self.viewModel.getUserDetail()
         self.activityIndicator.isHidden = false
     }
+    
+    // 顯示 alert 訊息
+    func showErrorAlert(message : String) {
+        let alert = UIAlertController(title: "Notice", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { _ in
+            // 返回上一頁
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 
@@ -107,6 +118,7 @@ extension UserDetailViewController: UserDetailViewModelDelegate {
     func getUserDetailFailure() {
         // Show error message
         self.activityIndicator.isHidden = true
+        self.showErrorAlert(message: self.viewModel.message)
     }
 }
 
